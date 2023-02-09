@@ -1,0 +1,17 @@
+fun closeOrderedList (i: int) = 
+                    if i = 0 then 
+                        ()
+                    else 
+                        (updated_content := !updated_content @ ["</ol>"]; closeOrderedList(i-1))
+                fun closeUnorderedList (i: int) =
+                    if i = 0 then 
+                        ()
+                    else 
+                        (updated_content := !updated_content @ ["</ul>"]; closeUnorderedList(i-1))
+                fun openOrderedList (i: int) = 
+                    if(i = 0) then ()
+                    else (updated_content := !updated_content @ ["<ol>"]; openOrderedList (i-1))
+                
+                fun openUnorderedList (i: int) =
+                    if(i = 0) then ()
+                    else (updated_content := !updated_content @ ["<ul>"]; openUnorderedList (i-1))
